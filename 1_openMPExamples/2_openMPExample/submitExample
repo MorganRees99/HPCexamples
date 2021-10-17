@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#SBATCH -J exampleCode  # Name the job 
+#SBATCH -o example-%j.out  # Write the output file
+#SBATCH -e example-%j.err  # Write the error file
+
+#SBATCH --nodes=1    # Request N nodes
+#SBATCH --ntasks-per-node=20  # Request n cores or task per node
+#
+
+#SBATCH -t 0-0:10:00  # Run for a maximum time of x days, y hours, z mins, q secs
+
+#SBATCH --mail-type=ALL   # Send email notification at the start and end of the job
+#SBATCH --mail-user=t.winyard@kent.ac.uk  # Send email notification to this address
+
+module list  # will list modules loaded by default
+pwd   # prints current working directory
+date  # prints the date and time
+
+./a.out  # run the job

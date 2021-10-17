@@ -1,0 +1,15 @@
+*cmake_install.cmake
+*CMakeCache.txt
+*Makefile
+*SolitonSolver
+**/CMakeFiles
+**/temp
+**/output
+**/outputs
+**/logs
+*.out
+*.err
+*.aux
+*.log
+*.synctex.gz
+*.toc
