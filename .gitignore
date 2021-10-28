@@ -8,7 +8,6 @@
 **/outputs
 **/logs
 *.out
-*.err
 *.aux
 *.log
 *.synctex.gz
