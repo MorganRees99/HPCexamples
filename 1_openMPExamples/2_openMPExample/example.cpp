@@ -39,11 +39,12 @@ void method1 () {
 	}
 
         // Out of the parallel region, finialize computation
-        for(int i=0, pi=0.0; i<j; i++){
+	pi = 0.0;
+        for(int i=0; i<j; i++){
 	    pi += sum[i]*step;
 	}
         delta = omp_get_wtime() - start;
-        printf("    PI = %.16g computed in %.4g seconds\n", pi, delta);
+        printf("PI = %.16g computed in %.4g seconds\n", pi, delta);
 
     }
     
@@ -82,11 +83,12 @@ void method2 () {
 	}
 
         // Out of the parallel region, finialize computation
-        for(int i=0, pi=0.0; i<j; i++){
+	pi = 0.0;
+        for(int i=0; i<j; i++){
 	    pi += sum[i][0]*step;
 	}
         delta = omp_get_wtime() - start;
-        printf("    PI = %.16g computed in %.4g seconds\n", pi, delta);
+        printf("PI = %.16g computed in %.4g seconds\n", pi, delta);
 
     }
     
@@ -96,7 +98,7 @@ void method2 () {
 void method3 () {
 
     int j;
-    double pi;
+    double pi=0.0;
     double start, delta;
 
     step = 1.0/(double) steps;
@@ -125,7 +127,7 @@ void method3 () {
 	}
 
         delta = omp_get_wtime() - start;
-        printf("    PI = %.16g computed in %.4g seconds\n", pi, delta);
+        printf("PI = %.16g computed in %.4g seconds\n", pi, delta);
 
     }
     
@@ -135,7 +137,7 @@ void method3 () {
 void method4 () {
 
     int j;
-    double pi;
+    double pi=0.0;
     double start, delta;
 
     step = 1.0/(double) steps;
@@ -164,7 +166,7 @@ void method4 () {
 	}
 
         delta = omp_get_wtime() - start;
-        printf("    PI = %.16g computed in %.4g seconds\n", pi, delta);
+        printf("PI = %.16g computed in %.4g seconds\n", pi, delta);
 
     }
     
@@ -201,7 +203,7 @@ void method5 () {
         // Out of the parallel region, finialize computation
         pi = step * sum;
         delta = omp_get_wtime() - start;
-        printf("    PI = %.16g computed in %.4g seconds\n", pi, delta);
+        printf("PI = %.16g computed in %.4g seconds\n", pi, delta);
 
     }
     
