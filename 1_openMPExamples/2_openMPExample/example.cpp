@@ -98,7 +98,7 @@ void method2 () {
 void method3 () {
 
     int j;
-    double pi=0.0;
+    double pi;
     double start, delta;
 
     step = 1.0/(double) steps;
@@ -112,6 +112,7 @@ void method3 () {
         omp_set_num_threads(j);
 
         double start = omp_get_wtime();
+	pi = 0.0;
 
         #pragma omp parallel
 	{
@@ -137,7 +138,7 @@ void method3 () {
 void method4 () {
 
     int j;
-    double pi=0.0;
+    double pi;
     double start, delta;
 
     step = 1.0/(double) steps;
@@ -151,6 +152,7 @@ void method4 () {
         omp_set_num_threads(j);
 
         double start = omp_get_wtime();
+	pi = 0.0;
 
         #pragma omp parallel
 	{
